@@ -17,3 +17,4 @@ RUN_001,PHASE_08,Schematic Audit,T-015,13-Block Electrical & Audio Contention Au
 RUN_001,PHASE_11_12,Layout Rework,T-016,Speaker Pair & 4-Switch Placement Design,2026-11-09T03:07:40+05:30,2026-11-09T03:08:20+05:30,40.0,35.2,4.8,0,COMPLETED,0,projects/WATCH_REWORK_V2/four_switch_placement_report.md
 RUN_001,PHASE_13_15,Validation & Deliverables,T-017,ERC DRC Quality Gates & BOM Export,2026-11-09T03:08:30+05:30,2026-11-09T03:09:45+05:30,75.0,68.5,6.5,0,COMPLETED,0,projects/WATCH_REWORK_V2/
 RUN_001,PHASE_16,Physical Fine-Tuning & Gate,T-018,Surgical Rework & Zero-DRC Placement Freeze,2026-11-09T03:25:00+05:30,2026-11-09T03:35:48+05:30,648.0,580.0,68.0,0,COMPLETED,0,projects/WATCH/state/placement_frozen.json
+RUN_001,PHASE_17,Post-Placement Resolution & Power Safety,T-019,SW5 Relocation & J2 Battery Thermal Safety,2026-11-09T03:53:30+05:30,2026-11-09T03:56:06+05:30,156.0,140.0,16.0,0,COMPLETED,0,projects/WATCH/state/placement_frozen.json

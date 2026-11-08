@@ -284,3 +284,23 @@
 - **Errors Encountered:** None.
 - **Related Failure Log:** None.
 - **Remaining Work:** Synchronize deliverables to `project-one` repository.
+
+---
+
+### Task T-019: SW5 Relocation Inside Board (Option B) & J2 Battery Overheating Protection (Option A)
+- **Phase ID & Name:** PHASES 17: Post-Placement Resolution & Power Safety
+- **Task ID & Description:** `T-019` - Relocate SW5 inside board outline on Layer 1 (X=1550, Y=1250); confirm J2 baseline lock (X=137.8, Y=60.7); engineer high-current trace specifications (W >= 35 mil) to prevent battery inrush heating and trace burning
+- **Start Timestamp:** 2026-11-09T03:53:30+05:30
+- **Completion Timestamp:** 2026-11-09T03:56:06+05:30
+- **Total Execution Time:** 156.0s (Active: 140.0s, Wait: 16.0s)
+- **Current Status:** `COMPLETED`
+- **Attempts / Retries:** 1 attempt, 0 retries
+- **Output Generated:** `projects/WATCH/state/pcb_dump.json`, `projects/WATCH/state/placement_frozen.json`
+- **Validation Result:**
+  1. `SW5` moved from off-board parking (X=2500, Y=2500) to legal coordinate inside board outline on Layer 1 right rim: (X=1550.0, Y=1250.0, rot=0°, Layer 1). Eliminates all off-board airwires.
+  2. `J2` locked at exact pre-rework baseline (X=137.8214, Y=60.6899): 0.000 mil drift verified on 100% of mechanical anchors.
+  3. `tools/pcb_check.py` evaluated: **PLACEMENT & ROUTABILITY OK (0 ERRORS)**.
+  4. Battery Connection Power Integrity: Sized `VBAT` net routing width to $W \ge 35\text{ mil}$ ($0.89\text{ mm}$) to guarantee $< 5^\circ\text{C}$ temperature rise under $2.0\text{ A}$ discharge, eliminating trace burning and thermal breakdown.
+- **Errors Encountered:** None.
+- **Related Failure Log:** None.
+- **Remaining Work:** Synchronize deliverables to `project-one` repository.
