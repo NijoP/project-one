@@ -22,6 +22,11 @@
 | **INC-008** | `2026-11-09 02:55:18` | API Contract Mismatch | `desk/bridge.py` `guard()` | **RESOLVED** |
 | **INC-009** | `2026-11-09 02:56:00` | API Contract Mismatch | Schematic Primitive Query | **RESOLVED** |
 | **INC-010** | `2026-11-09 02:57:07` | I/O Error | `scratch/extract_docx.py` | **RESOLVED** |
+| **INC-011** | `2026-11-09 03:48:00` | Component Placement | `SW5` Parked Off-Board | **RESOLVED** |
+| **INC-012** | `2026-11-09 03:59:00` | Toolchain Dependency | Missing `freerouting.jar` | **RESOLVED** |
+| **INC-013** | `2026-11-09 04:03:00` | DSN Parser Bug | Multi-line Class Rule Regex | **RESOLVED** |
+| **INC-014** | `2026-11-09 04:05:35` | CLI Architecture | Freerouting Modal GUI Dialog Hang | **RESOLVED** |
+| **INC-015** | `2026-11-09 04:20:00` | Geometry Collision | Fine-Pitch Pad Clearance Collision | **RESOLVED** |
 
 ---
 
@@ -51,6 +56,57 @@
 - **Corrective Action:** Switched codebase search operations to `git grep` and `Get-ChildItem -Recurse`.
 - **Resolution Status:** RESOLVED.
 - **Remaining Risks:** None.
+
+---
+
+### Incident INC-011: `SW5` Parked Outside Board Boundary
+- **Date & Timestamp:** 2026-11-09 03:48:00 +05:30
+- **Operation:** Post-placement visual audit of component positions
+- **Script / Module:** Live EasyEDA Pro Canvas
+- **Error Description:** Visual inspection flagged `SW5` placed at `(2500, 2500 mil)` (`59mm, 51mm`), well outside the board outline (`45mm x 45mm`), creating cross-board ratlines.
+- **Root Cause:** In the initial 4-switch alignment of `SW1`–`SW4`, `SW5` was parked off-board awaiting user design intent confirmation.
+- **Corrective Action:** User selected Option B. Relocated `SW5` to `(1550.0, 1250.0 mil)` on the right rim inside the board outline, clearing keepouts.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-012: `freerouting.jar` Missing from DESK Tool Library
+- **Date & Timestamp:** 2026-11-09 03:59:00 +05:30
+- **Operation:** Invoking `tools/route.py`
+- **Error Message:** `SystemExit: STOP: Freerouting jar not found at C:\watch\desk\library\tools\freerouting.jar`
+- **Root Cause:** Tool directory lacked the pre-built Freerouting binary.
+- **Corrective Action:** Located existing `freerouting.jar` (v2.1.0, 66.9 MB) in local user repository and copied into `C:\watch\desk\library\tools\freerouting.jar`.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-013: DSN Class Rule Regex Ignored Multi-line Rules
+- **Date & Timestamp:** 2026-11-09 04:03:00 +05:30
+- **Operation:** Tuning DSN file with custom IPC-2152 trace widths
+- **Error Description:** `desk_route_tuned.dsn` retained default 10 mil widths for `VBAT` and `VSYS` because `CLASS_BLOCK_RX` regex failed on multi-line `(circuit (use_via ...))` blocks.
+- **Root Cause:** EasyEDA Pro splits class rules across multiple newlines; single-line regex failed to match.
+- **Corrective Action:** Patched `desk/router.py` with `re.DOTALL` and multi-line inner rule substitution.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-014: Freerouting Modal GUI Dialog Hang
+- **Date & Timestamp:** 2026-11-09 04:05:35 +05:30
+- **Operation:** Headless 4-layer autorouting daemon execution
+- **Error Description:** Process PID 12088 consumed 980s CPU and hung indefinitely without exporting `.ses` or exiting.
+- **Root Cause:** Freerouting v2.1.0 defaults to GUI mode. Upon pass completion, `showProfileDialog()` opened a modal Swing `WindowUserSettings` dialog expecting human GUI input.
+- **Corrective Action:** Added `--gui.enabled=false` to CLI arguments in `tools/route.py` and set `"gui": {"enabled": false}` in `freerouting.json`.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-015: Fine-Pitch Pad Clearance Collision (`MazeSearchAlgo` Collapse)
+- **Date & Timestamp:** 2026-11-09 04:20:00 +05:30
+- **Operation:** Autonomous maze search pathfinding
+- **Error Description:** 143+ pin connections repeatedly failed with `maze search algorithm could not be created`.
+- **Root Cause:** Enforcing $W_{VBAT} = 35\text{ mil}$ and $W_{GND} = 25\text{ mil}$ globally caused Freerouting to force wide traces into $0.5\text{ mm}$ pitch QFN pads (`BQ24074`) where pad clearance is only $9.8\text{ mil}$.
+- **Corrective Action:** Sized DSN class escape widths to $\le 10\text{ mil}$ and added an automated post-import pass in EasyEDA canvas to widen open-board power trunks to $35\text{ mil}$ and $30\text{ mil}$.
+- **Resolution Status:** RESOLVED.
 
 ---
 
@@ -157,6 +213,57 @@
 
 ---
 
+### Incident INC-011: `SW5` Parked Outside Board Boundary
+- **Date & Timestamp:** 2026-11-09 03:48:00 +05:30
+- **Operation:** Post-placement visual audit of component positions
+- **Script / Module:** Live EasyEDA Pro Canvas
+- **Error Description:** Visual inspection flagged `SW5` placed at `(2500, 2500 mil)` (`59mm, 51mm`), well outside the board outline (`45mm x 45mm`), creating cross-board ratlines.
+- **Root Cause:** In the initial 4-switch alignment of `SW1`–`SW4`, `SW5` was parked off-board awaiting user design intent confirmation.
+- **Corrective Action:** User selected Option B. Relocated `SW5` to `(1550.0, 1250.0 mil)` on the right rim inside the board outline, clearing keepouts.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-012: `freerouting.jar` Missing from DESK Tool Library
+- **Date & Timestamp:** 2026-11-09 03:59:00 +05:30
+- **Operation:** Invoking `tools/route.py`
+- **Error Message:** `SystemExit: STOP: Freerouting jar not found at C:\watch\desk\library\tools\freerouting.jar`
+- **Root Cause:** Tool directory lacked the pre-built Freerouting binary.
+- **Corrective Action:** Located existing `freerouting.jar` (v2.1.0, 66.9 MB) in local user repository and copied into `C:\watch\desk\library\tools\freerouting.jar`.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-013: DSN Class Rule Regex Ignored Multi-line Rules
+- **Date & Timestamp:** 2026-11-09 04:03:00 +05:30
+- **Operation:** Tuning DSN file with custom IPC-2152 trace widths
+- **Error Description:** `desk_route_tuned.dsn` retained default 10 mil widths for `VBAT` and `VSYS` because `CLASS_BLOCK_RX` regex failed on multi-line `(circuit (use_via ...))` blocks.
+- **Root Cause:** EasyEDA Pro splits class rules across multiple newlines; single-line regex failed to match.
+- **Corrective Action:** Patched `desk/router.py` with `re.DOTALL` and multi-line inner rule substitution.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-014: Freerouting Modal GUI Dialog Hang
+- **Date & Timestamp:** 2026-11-09 04:05:35 +05:30
+- **Operation:** Headless 4-layer autorouting daemon execution
+- **Error Description:** Process PID 12088 consumed 980s CPU and hung indefinitely without exporting `.ses` or exiting.
+- **Root Cause:** Freerouting v2.1.0 defaults to GUI mode. Upon pass completion, `showProfileDialog()` opened a modal Swing `WindowUserSettings` dialog expecting human GUI input.
+- **Corrective Action:** Added `--gui.enabled=false` to CLI arguments in `tools/route.py` and set `"gui": {"enabled": false}` in `freerouting.json`.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-015: Fine-Pitch Pad Clearance Collision (`MazeSearchAlgo` Collapse)
+- **Date & Timestamp:** 2026-11-09 04:20:00 +05:30
+- **Operation:** Autonomous maze search pathfinding
+- **Error Description:** 143+ pin connections repeatedly failed with `maze search algorithm could not be created`.
+- **Root Cause:** Enforcing $W_{VBAT} = 35\text{ mil}$ and $W_{GND} = 25\text{ mil}$ globally caused Freerouting to force wide traces into $0.5\text{ mm}$ pitch QFN pads (`BQ24074`) where pad clearance is only $9.8\text{ mil}$.
+- **Corrective Action:** Sized DSN class escape widths to $\le 10\text{ mil}$ and added an automated post-import pass in EasyEDA canvas to widen open-board power trunks to $35\text{ mil}$ and $30\text{ mil}$.
+- **Resolution Status:** RESOLVED.
+
+---
+
 ### Incident INC-006: Speculative API Call `eda.dmt_Project.getProjectDocuments`
 - **Date & Timestamp:** 2026-11-09 02:53:06 +05:30
 - **Operation:** Querying all project documents in `watch`
@@ -219,6 +326,57 @@
 
 ---
 
+### Incident INC-011: `SW5` Parked Outside Board Boundary
+- **Date & Timestamp:** 2026-11-09 03:48:00 +05:30
+- **Operation:** Post-placement visual audit of component positions
+- **Script / Module:** Live EasyEDA Pro Canvas
+- **Error Description:** Visual inspection flagged `SW5` placed at `(2500, 2500 mil)` (`59mm, 51mm`), well outside the board outline (`45mm x 45mm`), creating cross-board ratlines.
+- **Root Cause:** In the initial 4-switch alignment of `SW1`–`SW4`, `SW5` was parked off-board awaiting user design intent confirmation.
+- **Corrective Action:** User selected Option B. Relocated `SW5` to `(1550.0, 1250.0 mil)` on the right rim inside the board outline, clearing keepouts.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-012: `freerouting.jar` Missing from DESK Tool Library
+- **Date & Timestamp:** 2026-11-09 03:59:00 +05:30
+- **Operation:** Invoking `tools/route.py`
+- **Error Message:** `SystemExit: STOP: Freerouting jar not found at C:\watch\desk\library\tools\freerouting.jar`
+- **Root Cause:** Tool directory lacked the pre-built Freerouting binary.
+- **Corrective Action:** Located existing `freerouting.jar` (v2.1.0, 66.9 MB) in local user repository and copied into `C:\watch\desk\library\tools\freerouting.jar`.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-013: DSN Class Rule Regex Ignored Multi-line Rules
+- **Date & Timestamp:** 2026-11-09 04:03:00 +05:30
+- **Operation:** Tuning DSN file with custom IPC-2152 trace widths
+- **Error Description:** `desk_route_tuned.dsn` retained default 10 mil widths for `VBAT` and `VSYS` because `CLASS_BLOCK_RX` regex failed on multi-line `(circuit (use_via ...))` blocks.
+- **Root Cause:** EasyEDA Pro splits class rules across multiple newlines; single-line regex failed to match.
+- **Corrective Action:** Patched `desk/router.py` with `re.DOTALL` and multi-line inner rule substitution.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-014: Freerouting Modal GUI Dialog Hang
+- **Date & Timestamp:** 2026-11-09 04:05:35 +05:30
+- **Operation:** Headless 4-layer autorouting daemon execution
+- **Error Description:** Process PID 12088 consumed 980s CPU and hung indefinitely without exporting `.ses` or exiting.
+- **Root Cause:** Freerouting v2.1.0 defaults to GUI mode. Upon pass completion, `showProfileDialog()` opened a modal Swing `WindowUserSettings` dialog expecting human GUI input.
+- **Corrective Action:** Added `--gui.enabled=false` to CLI arguments in `tools/route.py` and set `"gui": {"enabled": false}` in `freerouting.json`.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-015: Fine-Pitch Pad Clearance Collision (`MazeSearchAlgo` Collapse)
+- **Date & Timestamp:** 2026-11-09 04:20:00 +05:30
+- **Operation:** Autonomous maze search pathfinding
+- **Error Description:** 143+ pin connections repeatedly failed with `maze search algorithm could not be created`.
+- **Root Cause:** Enforcing $W_{VBAT} = 35\text{ mil}$ and $W_{GND} = 25\text{ mil}$ globally caused Freerouting to force wide traces into $0.5\text{ mm}$ pitch QFN pads (`BQ24074`) where pad clearance is only $9.8\text{ mil}$.
+- **Corrective Action:** Sized DSN class escape widths to $\le 10\text{ mil}$ and added an automated post-import pass in EasyEDA canvas to widen open-board power trunks to $35\text{ mil}$ and $30\text{ mil}$.
+- **Resolution Status:** RESOLVED.
+
+---
+
 ### Incident INC-009: Speculative Method `sch_PrimitiveComponent.getAllPrimitiveId`
 - **Date & Timestamp:** 2026-11-09 02:56:00 +05:30
 - **Operation:** Schematic component extraction
@@ -239,6 +397,57 @@
 - **Verification:** Successfully extracted all 89 schematic component primitives.
 - **Resolution Status:** RESOLVED.
 - **Remaining Risks:** None.
+
+---
+
+### Incident INC-011: `SW5` Parked Outside Board Boundary
+- **Date & Timestamp:** 2026-11-09 03:48:00 +05:30
+- **Operation:** Post-placement visual audit of component positions
+- **Script / Module:** Live EasyEDA Pro Canvas
+- **Error Description:** Visual inspection flagged `SW5` placed at `(2500, 2500 mil)` (`59mm, 51mm`), well outside the board outline (`45mm x 45mm`), creating cross-board ratlines.
+- **Root Cause:** In the initial 4-switch alignment of `SW1`–`SW4`, `SW5` was parked off-board awaiting user design intent confirmation.
+- **Corrective Action:** User selected Option B. Relocated `SW5` to `(1550.0, 1250.0 mil)` on the right rim inside the board outline, clearing keepouts.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-012: `freerouting.jar` Missing from DESK Tool Library
+- **Date & Timestamp:** 2026-11-09 03:59:00 +05:30
+- **Operation:** Invoking `tools/route.py`
+- **Error Message:** `SystemExit: STOP: Freerouting jar not found at C:\watch\desk\library\tools\freerouting.jar`
+- **Root Cause:** Tool directory lacked the pre-built Freerouting binary.
+- **Corrective Action:** Located existing `freerouting.jar` (v2.1.0, 66.9 MB) in local user repository and copied into `C:\watch\desk\library\tools\freerouting.jar`.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-013: DSN Class Rule Regex Ignored Multi-line Rules
+- **Date & Timestamp:** 2026-11-09 04:03:00 +05:30
+- **Operation:** Tuning DSN file with custom IPC-2152 trace widths
+- **Error Description:** `desk_route_tuned.dsn` retained default 10 mil widths for `VBAT` and `VSYS` because `CLASS_BLOCK_RX` regex failed on multi-line `(circuit (use_via ...))` blocks.
+- **Root Cause:** EasyEDA Pro splits class rules across multiple newlines; single-line regex failed to match.
+- **Corrective Action:** Patched `desk/router.py` with `re.DOTALL` and multi-line inner rule substitution.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-014: Freerouting Modal GUI Dialog Hang
+- **Date & Timestamp:** 2026-11-09 04:05:35 +05:30
+- **Operation:** Headless 4-layer autorouting daemon execution
+- **Error Description:** Process PID 12088 consumed 980s CPU and hung indefinitely without exporting `.ses` or exiting.
+- **Root Cause:** Freerouting v2.1.0 defaults to GUI mode. Upon pass completion, `showProfileDialog()` opened a modal Swing `WindowUserSettings` dialog expecting human GUI input.
+- **Corrective Action:** Added `--gui.enabled=false` to CLI arguments in `tools/route.py` and set `"gui": {"enabled": false}` in `freerouting.json`.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-015: Fine-Pitch Pad Clearance Collision (`MazeSearchAlgo` Collapse)
+- **Date & Timestamp:** 2026-11-09 04:20:00 +05:30
+- **Operation:** Autonomous maze search pathfinding
+- **Error Description:** 143+ pin connections repeatedly failed with `maze search algorithm could not be created`.
+- **Root Cause:** Enforcing $W_{VBAT} = 35\text{ mil}$ and $W_{GND} = 25\text{ mil}$ globally caused Freerouting to force wide traces into $0.5\text{ mm}$ pitch QFN pads (`BQ24074`) where pad clearance is only $9.8\text{ mil}$.
+- **Corrective Action:** Sized DSN class escape widths to $\le 10\text{ mil}$ and added an automated post-import pass in EasyEDA canvas to widen open-board power trunks to $35\text{ mil}$ and $30\text{ mil}$.
+- **Resolution Status:** RESOLVED.
 
 ---
 
@@ -266,3 +475,54 @@
 - **Verification:** Script wrote 275 paragraphs (13,967 characters) successfully.
 - **Resolution Status:** RESOLVED.
 - **Remaining Risks:** None.
+
+---
+
+### Incident INC-011: `SW5` Parked Outside Board Boundary
+- **Date & Timestamp:** 2026-11-09 03:48:00 +05:30
+- **Operation:** Post-placement visual audit of component positions
+- **Script / Module:** Live EasyEDA Pro Canvas
+- **Error Description:** Visual inspection flagged `SW5` placed at `(2500, 2500 mil)` (`59mm, 51mm`), well outside the board outline (`45mm x 45mm`), creating cross-board ratlines.
+- **Root Cause:** In the initial 4-switch alignment of `SW1`–`SW4`, `SW5` was parked off-board awaiting user design intent confirmation.
+- **Corrective Action:** User selected Option B. Relocated `SW5` to `(1550.0, 1250.0 mil)` on the right rim inside the board outline, clearing keepouts.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-012: `freerouting.jar` Missing from DESK Tool Library
+- **Date & Timestamp:** 2026-11-09 03:59:00 +05:30
+- **Operation:** Invoking `tools/route.py`
+- **Error Message:** `SystemExit: STOP: Freerouting jar not found at C:\watch\desk\library\tools\freerouting.jar`
+- **Root Cause:** Tool directory lacked the pre-built Freerouting binary.
+- **Corrective Action:** Located existing `freerouting.jar` (v2.1.0, 66.9 MB) in local user repository and copied into `C:\watch\desk\library\tools\freerouting.jar`.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-013: DSN Class Rule Regex Ignored Multi-line Rules
+- **Date & Timestamp:** 2026-11-09 04:03:00 +05:30
+- **Operation:** Tuning DSN file with custom IPC-2152 trace widths
+- **Error Description:** `desk_route_tuned.dsn` retained default 10 mil widths for `VBAT` and `VSYS` because `CLASS_BLOCK_RX` regex failed on multi-line `(circuit (use_via ...))` blocks.
+- **Root Cause:** EasyEDA Pro splits class rules across multiple newlines; single-line regex failed to match.
+- **Corrective Action:** Patched `desk/router.py` with `re.DOTALL` and multi-line inner rule substitution.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-014: Freerouting Modal GUI Dialog Hang
+- **Date & Timestamp:** 2026-11-09 04:05:35 +05:30
+- **Operation:** Headless 4-layer autorouting daemon execution
+- **Error Description:** Process PID 12088 consumed 980s CPU and hung indefinitely without exporting `.ses` or exiting.
+- **Root Cause:** Freerouting v2.1.0 defaults to GUI mode. Upon pass completion, `showProfileDialog()` opened a modal Swing `WindowUserSettings` dialog expecting human GUI input.
+- **Corrective Action:** Added `--gui.enabled=false` to CLI arguments in `tools/route.py` and set `"gui": {"enabled": false}` in `freerouting.json`.
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-015: Fine-Pitch Pad Clearance Collision (`MazeSearchAlgo` Collapse)
+- **Date & Timestamp:** 2026-11-09 04:20:00 +05:30
+- **Operation:** Autonomous maze search pathfinding
+- **Error Description:** 143+ pin connections repeatedly failed with `maze search algorithm could not be created`.
+- **Root Cause:** Enforcing $W_{VBAT} = 35\text{ mil}$ and $W_{GND} = 25\text{ mil}$ globally caused Freerouting to force wide traces into $0.5\text{ mm}$ pitch QFN pads (`BQ24074`) where pad clearance is only $9.8\text{ mil}$.
+- **Corrective Action:** Sized DSN class escape widths to $\le 10\text{ mil}$ and added an automated post-import pass in EasyEDA canvas to widen open-board power trunks to $35\text{ mil}$ and $30\text{ mil}$.
+- **Resolution Status:** RESOLVED.
