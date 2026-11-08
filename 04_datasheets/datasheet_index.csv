@@ -1,0 +1,13 @@
+Subsystem,Designator,MPN,Manufacturer,Description,Package,Datasheet Reference
+MCU,U5,ESP32-S3-WROOM-1-N16R8,Espressif,Dual-core Wi-Fi/BLE MCU 16MB Flash 8MB PSRAM,WIRELM-SMD_ESP32-S3,https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf
+Audio,MIC1-3,ICS-43434,TDK InvenSense,Digital I2S Bottom-Port MEMS Microphone,MIC-SMD_6P,https://invensense.tdk.com/download-pdf/ics-43434-datasheet/
+Audio,U6-7,MAX98357AETE+T,Analog Devices,Class-D Filterless I2S Audio Power Amplifier,TQFN-16,https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf
+Power,U2,BQ24074RGTR,Texas Instruments,1.5A Li-ion Charger with Power-Path Management,QFN-16,https://www.ti.com/lit/ds/symlink/bq24074.pdf
+Power,U3,TPS63802DLAR,Texas Instruments,2A High Efficiency Buck-Boost Converter,VSON-10,https://www.ti.com/lit/ds/symlink/tps63802.pdf
+Power,U4,TPS61023DRLR,Texas Instruments,Synchronous Boost Converter 5V Output,SOT-563,https://www.ti.com/lit/ds/symlink/tps61023.pdf
+Sensors,U8,ICM-42670-P,TDK InvenSense,High-Performance 6-Axis MotionTracking IMU,LGA-14,https://invensense.tdk.com/download-pdf/icm-42670-p-datasheet/
+Display,J6,S8B-PH-SM4-TB(LF)(SN),JST,8-Pin 2.0mm Horizontal Shrouded Header,CONN-SMD_8P-P2.00,https://www.waveshare.com/wiki/1.47inch_LCD_Module
+Storage,J5,TF-01A,Generic,microSD Push-Pull TF Card Socket,TF-SMD_TF-01A,LCSC C492248
+Interface,J1,TYPE-C-31-M-12,Korean Hroparts,USB-C 16-Pin SMT Receptacle 5A,USB-C_SMD,LCSC C2765186
+Protection,U1,USBLC6-2SC6,STMicroelectronics,Very Low Capacitance Rail-to-Rail ESD Protection,SOT-23-6,https://www.st.com/resource/en/datasheet/usblc6-2.pdf
+Switches,SW1-4,TS-1187A-B-A-B,XKB Enterprise,SMD 5.1x5.1mm Tactile Pushbutton Switch,SW-SMD_4P,LCSC C318884

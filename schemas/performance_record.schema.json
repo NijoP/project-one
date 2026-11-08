@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DESKPerformanceRecord",
+  "type": "object",
+  "required": [
+    "timestamp",
+    "run_id",
+    "task_id",
+    "duration_s",
+    "active_s",
+    "waiting_s",
+    "status"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "duration_s": {
+      "type": "number"
+    },
+    "active_s": {
+      "type": "number"
+    },
+    "waiting_s": {
+      "type": "number"
+    },
+    "cpu_cores": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "ram_mb": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "api_response_ms": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "retry_count": {
+      "type": "integer"
+    },
+    "failure_count": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

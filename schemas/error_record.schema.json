@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DESKErrorRecord",
+  "type": "object",
+  "required": [
+    "timestamp",
+    "run_id",
+    "task_id",
+    "script_name",
+    "error_category",
+    "error_message",
+    "root_cause",
+    "resolution_status"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "script_name": {
+      "type": "string"
+    },
+    "error_category": {
+      "type": "string",
+      "enum": [
+        "COMMAND_SYNTAX",
+        "ENVIRONMENTAL",
+        "API_GATEWAY_COMMUNICATION",
+        "API_CONTRACT_MISMATCH",
+        "STALE_METADATA",
+        "SCRIPT_BUG",
+        "IO_ERROR",
+        "PHYSICS_DRC_VIOLATION"
+      ]
+    },
+    "error_message": {
+      "type": "string"
+    },
+    "stack_trace": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "root_cause": {
+      "type": "string"
+    },
+    "corrective_action": {
+      "type": "string"
+    },
+    "resolution_status": {
+      "type": "string",
+      "enum": [
+        "RESOLVED",
+        "VERIFIED_NOT_REQUIRED",
+        "PENDING_APPROVAL",
+        "UNRESOLVED"
+      ]
+    }
+  }
+}

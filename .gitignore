@@ -1,0 +1,32 @@
+# Project One - Git Ignore Policy
+# Keep confidential engineering artifacts private and clean
+
+# Node modules & temporary caches
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Editor & OS artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Build scratch
+scratch/
+tmp/
+*.tmp
