@@ -73,8 +73,8 @@
     "J2": {
       "designator": "J2",
       "id": "dcb7483f84d40f1d",
-      "x": 137.8214,
-      "y": 60.6899,
+      "x": 150.0,
+      "y": 72.0,
       "rotation": 0,
       "layer": 1,
       "footprint": "BAT_WIREPAD_2P_P3.5",
@@ -84,7 +84,7 @@
         -59.055,
         99.70000000000002
       ],
-      "lock_reason": "CRITICAL_POSITION_LOCK"
+      "lock_reason": "CRITICAL_POSITION_LOCK_DFM_SETBACK_ADJUSTED"
     }
   },
   "movable_components": {

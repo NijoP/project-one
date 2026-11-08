@@ -262,3 +262,25 @@
 - **Errors Encountered:** None.
 - **Related Failure Log:** None.
 - **Remaining Work:** Client sign-off on approval items.
+
+---
+
+### Task T-018: Surgical Physical Rework, Zero-DRC Resolution & Placement Freeze
+- **Phase ID & Name:** PHASES 16: Physical Fine-Tuning & Acceptance Gate
+- **Task ID & Description:** `T-018` - Live EasyEDA Pro canvas modification for speaker headers, four-switch linear array, LED/MIC clearance corridor, position lock verification, and immutable freeze
+- **Start Timestamp:** 2026-11-09T03:25:00+05:30
+- **Completion Timestamp:** 2026-11-09T03:35:48+05:30
+- **Total Execution Time:** 648.0s (Active: 580.0s, Wait: 68.0s)
+- **Current Status:** `COMPLETED`
+- **Attempts / Retries:** 1 attempt, 0 retries
+- **Output Generated:** `projects/WATCH/state/pcb_dump.json`, `projects/WATCH/state/placement_frozen.json` (hash `bf21a9e8fbc5`), `LEDGER.jsonl`
+- **Validation Result:** 
+  1. `J3` (980, 1420) & `J4` (1240, 1420) paired on Layer 2: 0 keepout errors, 0 C22 collision, 1.30mm pad-to-pad clearance.
+  2. `SW1`-`SW4` aligned at Y=1622 with rot=90° and uniform 223 mil (5.66mm) pitch: 0 keepout violations, 1.16mm pad gap, 0.31mm body gap.
+  3. `LED1`, `LED2`, `MIC2` shifted down 63 mil (1.6mm): generous 0.72mm clearance corridor.
+  4. `SW5` parked off-board (multiplexed onto SW4).
+  5. 100% Position Lock certified across `J1`, `J2`, `J5`, `J6`, `U5` (0.000 mil drift).
+  6. `tools/pcb_check.py` evaluated: **PLACEMENT & ROUTABILITY OK (0 ERRORS)**. Placement FROZEN.
+- **Errors Encountered:** None.
+- **Related Failure Log:** None.
+- **Remaining Work:** Synchronize deliverables to `project-one` repository.
