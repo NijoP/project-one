@@ -1,0 +1,47 @@
+warning_id,rule_name,error_level,message,component_ref,pin_number,net_name,coordinates,source_schematic,reproducible,real_electrical_defect,intentional_design,library_metadata_error,classification,justification
+ERC-01,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,1,NC,"120, 85",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 internal test pin 1 is intentionally not connected per Espressif datasheet.
+ERC-02,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,2,NC,"120, 87",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 internal test pin 2 is intentionally not connected.
+ERC-03,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,17,NC,"120, 117",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 NC pin 17 left floating per hardware design guidelines.
+ERC-04,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,18,NC,"120, 119",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 NC pin 18 left floating.
+ERC-05,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,19,NC,"120, 121",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 NC pin 19 left floating.
+ERC-06,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,20,NC,"120, 123",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 NC pin 20 left floating.
+ERC-07,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,21,NC,"120, 125",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 NC pin 21 left floating.
+ERC-08,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,22,NC,"120, 127",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 NC pin 22 left floating.
+ERC-09,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,23,NC,"120, 129",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 NC pin 23 left floating.
+ERC-10,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,32,NC,"150, 115",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 NC pin 32 left floating.
+ERC-11,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,33,NC,"150, 113",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 NC pin 33 left floating.
+ERC-12,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,34,NC,"150, 111",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 NC pin 34 left floating.
+ERC-13,Unconnected Pin,WARN,Pin is not connected to any wire or net,U5,35,NC,"150, 109",Schematic1,true,false,true,false,INTENTIONAL_NC,ESP32-S3 NC pin 35 left floating.
+ERC-14,Unconnected Pin,WARN,Pin is not connected to any wire or net,U6,5,NC,"75, 45",Schematic1,true,false,true,false,INTENTIONAL_NC,PMIC BQ24074 NC pin 5 left unconnected per TI datasheet.
+ERC-15,Unconnected Pin,WARN,Pin is not connected to any wire or net,U6,14,NC,"85, 45",Schematic1,true,false,true,false,INTENTIONAL_NC,PMIC BQ24074 NC pin 14 left unconnected.
+ERC-16,Unconnected Pin,WARN,Pin is not connected to any wire or net,U7,7,NC,"45, 60",Schematic1,true,false,true,false,INTENTIONAL_NC,LSM6DSOX IMU pin 7 (NC) left unconnected per ST datasheet.
+ERC-17,Unconnected Pin,WARN,Pin is not connected to any wire or net,U7,8,NC,"45, 62",Schematic1,true,false,true,false,INTENTIONAL_NC,LSM6DSOX IMU pin 8 (NC) left unconnected.
+ERC-18,Unconnected Pin,WARN,Pin is not connected to any wire or net,U7,9,NC,"45, 64",Schematic1,true,false,true,false,INTENTIONAL_NC,LSM6DSOX IMU pin 9 (NC) left unconnected.
+ERC-19,Unconnected Pin,WARN,Pin is not connected to any wire or net,U7,10,NC,"45, 66",Schematic1,true,false,true,false,INTENTIONAL_NC,LSM6DSOX IMU pin 10 (NC) left unconnected.
+ERC-20,Unconnected Pin,WARN,Pin is not connected to any wire or net,U7,11,NC,"45, 68",Schematic1,true,false,true,false,INTENTIONAL_NC,LSM6DSOX IMU pin 11 (NC) left unconnected.
+ERC-21,Unconnected Pin,WARN,Pin is not connected to any wire or net,U8,1,NC,"95, 80",Schematic1,true,false,true,false,INTENTIONAL_NC,MAX98357A pin 1 (NC) left unconnected per Maxim datasheet.
+ERC-22,Unconnected Pin,WARN,Pin is not connected to any wire or net,U8,5,NC,"95, 88",Schematic1,true,false,true,false,INTENTIONAL_NC,MAX98357A pin 5 (NC) left unconnected.
+ERC-23,Unconnected Pin,WARN,Pin is not connected to any wire or net,J5,8,DAT1,"140, 45",Schematic1,true,false,true,false,INTENTIONAL_NC,microSD socket DAT1 unused in 1-bit SPI bus mode.
+ERC-24,Unconnected Pin,WARN,Pin is not connected to any wire or net,J5,9,DAT2,"140, 47",Schematic1,true,false,true,false,INTENTIONAL_NC,microSD socket DAT2 unused in 1-bit SPI bus mode.
+ERC-25,Unconnected Pin,WARN,Pin is not connected to any wire or net,J1,B8,SBU2,"30, 25",Schematic1,true,false,true,false,INTENTIONAL_NC,USB Type-C SBU2 not required for USB 2.0 Full-Speed operation.
+ERC-26,Unconnected Pin,WARN,Pin is not connected to any wire or net,J1,A8,SBU1,"30, 23",Schematic1,true,false,true,false,INTENTIONAL_NC,USB Type-C SBU1 not required for USB 2.0 Full-Speed operation.
+ERC-27,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U5,3,3V3,"120, 89",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,U5 VDD3P3 is driven by LDO U3 output. Library symbol U3 VOUT is typed as Passive rather than Power Output.
+ERC-28,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U5,4,3V3,"120, 91",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,U5 VDD3P3 driven by U3. U3 symbol pin type is Passive.
+ERC-29,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U5,46,3V3,"150, 89",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,U5 VDD3P3 driven by U3. U3 symbol pin type is Passive.
+ERC-30,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U7,1,3V3,"45, 48",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,IMU VDD driven by 3V3 rail.
+ERC-31,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U7,5,3V3,"45, 56",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,IMU VDD_IO driven by 3V3 rail.
+ERC-32,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U8,7,3V3,"95, 92",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,MAX98357A VDD driven by 3V3 rail.
+ERC-33,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U8,8,3V3,"95, 94",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,MAX98357A VDD driven by 3V3 rail.
+ERC-34,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,J5,4,3V3,"140, 37",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,microSD VDD driven by 3V3 rail.
+ERC-35,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,J6,1,3V3,"160, 70",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,LCD display VDD driven by 3V3 rail.
+ERC-36,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U6,13,VBAT,"85, 43",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,PMIC BAT pin driven by battery connector J2. J2 pins typed as Passive.
+ERC-37,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U6,10,VSYS,"85, 37",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,PMIC SYS output pin typed as Power Input in library symbol metadata.
+ERC-38,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U6,11,VSYS,"85, 39",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,PMIC SYS output pin typed as Power Input in library symbol metadata.
+ERC-39,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U3,1,VSYS,"60, 40",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,LDO VIN driven by VSYS rail.
+ERC-40,Power Pin Not Driven,WARN,Power input pin is not driven by any power output pin,U2,1,VSYS,"50, 40",Schematic1,true,false,true,true,LIBRARY_METADATA_ERROR,Sensor VIN driven by VSYS rail.
+ERC-41,Single Net Node,WARN,Net has only one pin connection,U5,26,MCU_BOOT,"120, 135",Schematic1,true,false,true,false,FALSE_POSITIVE,Net MCU_BOOT connects U5 pin 26 to push-button SW2 and pull-up resistor R18. Multi-sheet node.
+ERC-42,Single Net Node,WARN,Net has only one pin connection,U5,27,MCU_EN,"120, 137",Schematic1,true,false,true,false,FALSE_POSITIVE,Net MCU_EN connects U5 pin 27 to push-button SW1, capacitor C20, and pull-up resistor R17. Multi-sheet node.
+ERC-43,Single Net Node,WARN,Net has only one pin connection,U5,14,IMU_INT1,"120, 111",Schematic1,true,false,true,false,FALSE_POSITIVE,Net IMU_INT1 connects U5 pin 14 to IMU U7 pin 4.
+ERC-44,Single Net Node,WARN,Net has only one pin connection,U6,9,PGOOD_N,"85, 35",Schematic1,true,false,true,false,FALSE_POSITIVE,Net PGOOD_N connects PMIC U6 pin 9 to ESP32 U5 pin 16 and pull-up resistor R20.
+ERC-45,Single Net Node,WARN,Net has only one pin connection,U6,7,CHG_STAT,"85, 31",Schematic1,true,false,true,false,FALSE_POSITIVE,Net CHG_STAT connects PMIC U6 pin 7 to LED status driver and ESP32 U5 pin 15.
+ERC-46,Single Net Node,WARN,Net has only one pin connection,U7,12,SD_DET,"45, 70",Schematic1,true,false,true,false,FALSE_POSITIVE,Net SD_DET connects microSD socket card detect switch to pull-up resistor R21 and ESP32 U5 pin 36.

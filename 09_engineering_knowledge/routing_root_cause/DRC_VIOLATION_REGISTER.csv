@@ -1,0 +1,16 @@
+violation_id,violation_category,rule_name,object1,object2,layer,measured_distance_mm,required_clearance_mm,status,resolution_mechanism
+DRC-CLR-01,Clearance Error,Safe Spacing,Track (VBUS),Board Outline,Top Layer,0.082,0.300,RESOLVED,Selectively ripped up line 36b8a2 encroaching board perimeter. Setback restored.
+DRC-CLR-02,Clearance Error,Safe Spacing,Track (VBAT),Board Outline,Bottom Layer,0.065,0.300,RESOLVED,Ripped up perimeter line 72fa01. Power trunk rerouted inside route envelope.
+DRC-CLR-03,Clearance Error,Safe Spacing,Track (VSYS),Board Outline,Top Layer,0.091,0.300,RESOLVED,Ripped up perimeter line 94c3d2. Setback restored.
+DRC-CLR-04..27,Clearance Error,Safe Spacing,Track,Via (various),Top/Bottom Layer,0.045..0.088,0.102,RESOLVED,Ripped up 24 conflicting line segments from previous partial autoroute superposition.
+DRC-CLR-28..96,Clearance Error,Safe Spacing,SMD Pad,Track (various),Top/Bottom Layer,0.025..0.095,0.102,RESOLVED,Ripped up 69 acute-angle track entry stubs crossing neighboring pad clearance envelopes.
+DRC-CLR-97..103,Clearance Error,Safe Spacing,Track,Track,Top/Bottom Layer,0.000,0.102,RESOLVED,Deleted 7 duplicated overlapping track segments caused by un-cleared multi-session SES import.
+DRC-CLR-104..125,Clearance Error,Safe Spacing,SMD Pad,Via,Top/Bottom Layer,0.068..0.092,0.102,RESOLVED,Deleted orphaned via e379 (net SD_DET) conflicting with R21_1 and e377 (net SD_CS) conflicting with J6_6.
+DRC-CLR-126,Clearance Error,Safe Spacing,SMD Pad (LCD_DC: J6_6),Via (SD_CS: e377),Top Layer,0.090,0.102,RESOLVED,Deleted via e377 and ripped up 3 connected acute stubs. Clearance errors dropped to exactly 0.
+DRC-CONN-01..41,Connection Error,Unconnected Net,SMD Pad (GND),GND Copper Polygon,Top/Bottom Layer,-,-,IN_PROGRESS,41 disconnected SMD pads on outer layers. Rebuilding copper pours dropped count from 87 to 41. Requires stitching vias to Layer 15.
+DRC-CONN-42..71,Connection Error,Unconnected Net,SMD Pad (3V3),3V3 Net,Top/Bottom Layer,-,-,IN_PROGRESS,30 unrouted connections on 3V3 power distribution rail. Requires 5.0 mil fine-pitch escape from QFN/ESP32 pads.
+DRC-CONN-72..88,Connection Error,Unconnected Net,SMD Pad (VSYS),VSYS Net,Top/Bottom Layer,-,-,IN_PROGRESS,17 unrouted connections on VSYS rail. Requires fine-pitch escape from PMIC BQ24074 pin 10/11.
+DRC-CONN-89..93,Connection Error,Unconnected Net,SMD Pad (USB_DM),USB_DM Net,Top Layer,-,-,IN_PROGRESS,5 unrouted connections between USB Type-C connector J1 and ESP32-S3 pins 19/20.
+DRC-CONN-94..97,Connection Error,Unconnected Net,SMD Pad (USB_DP),USB_DP Net,Top Layer,-,-,IN_PROGRESS,4 unrouted connections between USB Type-C connector J1 and ESP32-S3 pins 21/22.
+DRC-CONN-98..101,Connection Error,Unconnected Net,SMD Pad (VBUS),VBUS Net,Top Layer,-,-,IN_PROGRESS,4 unrouted connections between J1 VBUS pins and PMIC input.
+DRC-CONN-102..200,Connection Error,Unconnected Net,SMD Pad (various signals),Signal Nets,Top/Bottom Layer,-,-,IN_PROGRESS,99 unrouted connections across SPI (SD/LCD), I2C, I2S Audio, buttons, and status signals. Supported by V2 compact AST routing.

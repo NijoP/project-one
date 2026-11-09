@@ -1,0 +1,1623 @@
+(session desk_route_tuned
+  (base_design desk_route_tuned)
+  (placement
+    (resolution mil 1000)
+    (component u1
+      (place u1 0 0 front 0)
+    )
+  )
+  (was_is
+  )
+  (routes 
+    (resolution mil 1000)
+    (parser
+      (host_cad "EasyEDA Pro")
+      (host_version 3.2.149.88089769)
+    )
+    (library_out 
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+      (padstack via0
+        (shape
+          (circle TopLayer 24000 0 0)
+        )
+        (shape
+          (circle BottomLayer 24000 0 0)
+        )
+        (shape
+          (circle Inner1 24000 0 0)
+        )
+        (shape
+          (circle Inner2 24000 0 0)
+        )
+      )
+    )
+    (network_out 
+      (net GND
+        (wire
+          (path BottomLayer 6000
+            272890 153990
+            272890 136293
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            273390 75250
+            273390 135793
+            272890 136293
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1209110 783910
+            1231927 783910
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1304974 783910
+            1287010 765946
+            1249891 765946
+            1231927 783910
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1304974 783910
+            1313427 783910
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1296520 783910
+            1304974 783910
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1723920 242170
+            1691263 242170
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1691263 242170
+            1690440 241347
+            1690440 65010
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            1291250 1018250
+            1291250 982640
+            1289170 980560
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1169580 1512470
+            1169580 1554967
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1311310 1512470
+            1311310 1554967
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1311310 1554967
+            1169580 1554967
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1394940 882330
+            1313427 800817
+            1313427 783910
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            974210 980560
+            974210 1016170
+            976290 1018250
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1289820 1207130
+            1289820 1226820
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1358720 1276030
+            1358720 1295897
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1339030 1276030
+            1339030 1295897
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1339030 1295897
+            1358720 1295897
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            155280 783910
+            155280 766213
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            253710 783910
+            253710 766213
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            253710 766213
+            155280 766213
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            299650 1109690
+            299650 1164810
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            118560 279970
+            118560 257153
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            118560 257153
+            129968 257153
+            165800 221321
+            165800 153990
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            453200 1010210
+            472077 1010210
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            512260 1000450
+            475663 1000450
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            475663 1000450
+            472077 1004036
+            472077 1010210
+          )
+        )
+      )
+      (net LCD_RST
+        (wire
+          (path BottomLayer 6000
+            1080480 1079180
+            1080480 1061483
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1080480 1061483
+            960411 1061483
+            807279 908351
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            805316 908351
+            807279 908351
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            807279 908351
+            805316 908351
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            758320 918750
+            794917 918750
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            807279 908351
+            805316 908351
+            794917 918750
+          )
+        )
+        (via via0 807279 908351
+        )
+      )
+      (net REG_3V3_PG
+        (wire
+          (path BottomLayer 6000
+            558520 646110
+            577397 646110
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            608040 764220
+            608040 676753
+            577397 646110
+          )
+        )
+      )
+      (net NET_L1
+        (wire
+          (path BottomLayer 6000
+            637810 378400
+            637810 460267
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            623480 587060
+            598693 587060
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            598693 587060
+            598693 499384
+            637810 460267
+          )
+        )
+      )
+      (net LCD_DC
+        (wire
+          (path TopLayer 6000
+            1464030 842950
+            894236 842950
+            868436 868750
+            758320 868750
+          )
+        )
+      )
+      (net VBUS_BOOST
+        (wire
+          (path BottomLayer 6000
+            1028010 705170
+            1005193 705170
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            915800 626430
+            934677 626430
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            934677 626430
+            1005193 696946
+            1005193 705170
+          )
+        )
+      )
+      (net NET_LED_STAT_A
+        (wire
+          (path TopLayer 6000
+            1043740 1439380
+            1043740 1416563
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            1043750 1289130
+            1061447 1289130
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            1061447 1289130
+            1066567 1294250
+            1066567 1399440
+            1049444 1416563
+            1043740 1416563
+          )
+        )
+      )
+      (net VBUS_SENSE
+        (wire
+          (path BottomLayer 6000
+            531098 176366
+            459036 176366
+            357920 75250
+          )
+        )
+        (via via0 531098 176366
+        )
+        (wire
+          (path TopLayer 6000
+            688830 769540
+            688830 627374
+            531098 469642
+            531098 176366
+          )
+        )
+      )
+      (net SD_DET
+        (wire
+          (path BottomLayer 6000
+            1723900 112250
+            1756557 112250
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1756557 112250
+            1756817 112510
+            1756817 510278
+            1592290 674805
+            1592290 783910
+          )
+        )
+      )
+      (net I2S_SPK_WS
+        (wire
+          (path BottomLayer 6000
+            846910 1187370
+            828033 1187370
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            176366 1210090
+            258709 1210090
+          )
+        )
+        (wire
+          (path Inner1 6000
+            176366 1210090
+            258709 1210090
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            258709 1210090
+            176366 1210090
+          )
+        )
+        (wire
+          (path Inner1 6000
+            258709 1210090
+            176366 1210090
+          )
+        )
+        (wire
+          (path Inner1 6000
+            258709 1210090
+            176366 1127747
+            176366 1004074
+          )
+        )
+        (via via0 258709 1210090
+        )
+        (wire
+          (path BottomLayer 6000
+            828033 1187370
+            816189 1199214
+            269585 1199214
+            258709 1210090
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            69340 1218750
+            105937 1218750
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            176366 1004074
+            189920 990520
+            453200 990520
+          )
+        )
+        (via via0 176366 1004074
+        )
+        (wire
+          (path TopLayer 6000
+            105937 1218750
+            105937 1074503
+            176366 1004074
+          )
+        )
+      )
+      (net VBAT
+        (wire
+          (path BottomLayer 6000
+            118560 224850
+            93095 250315
+            93095 298632
+            115773 321310
+            120940 321310
+            185884 386254
+            185884 412854
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            69370 76880
+            69370 143007
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            185884 412854
+            185884 259521
+            69370 143007
+          )
+        )
+        (via via0 185884 412854
+        )
+        (wire
+          (path BottomLayer 6000
+            216980 518160
+            207696 518160
+            185884 496348
+            185884 412854
+          )
+        )
+      )
+      (net CHG_STAT
+        (wire
+          (path TopLayer 6000
+            188830 691657
+            187460 691657
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            188830 691657
+            187460 691657
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            155280 685480
+            173487 685480
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            187460 691657
+            188830 691657
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            188830 691657
+            179664 691657
+            173487 685480
+          )
+        )
+        (via via0 187460 691657
+        )
+        (wire
+          (path TopLayer 6000
+            188830 768360
+            188830 693027
+            187460 691657
+          )
+        )
+      )
+      (net NET_TMR
+        (wire
+          (path BottomLayer 6000
+            285880 468950
+            285880 459511
+            300158 445233
+            325133 445233
+            416480 536580
+            416480 783910
+          )
+        )
+      )
+      (net USB_DP
+        (wire
+          (path TopLayer 6000
+            924980 258600
+            924980 291257
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            885610 258600
+            885610 291257
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            885610 291257
+            924980 291257
+          )
+        )
+      )
+      (net VBUS
+        (wire
+          (path BottomLayer 6000
+            305570 468950
+            334612 468950
+            359362 493700
+            359362 562284
+            310559 611087
+            261031 611087
+            246510 596566
+            246510 587060
+          )
+        )
+      )
+      (net I2S_MIC_SD2
+        (wire
+          (path TopLayer 6000
+            758320 1368750
+            794917 1368750
+          )
+        )
+        (wire
+          (path TopLayer 6000
+            794917 1368750
+            794917 1353182
+            1147659 1000440
+            1189970 1000440
+          )
+        )
+      )
+      (net I2S_MIC_CLK
+        (wire
+          (path TopLayer 6000
+            1222330 1035880
+            1172198 1086012
+            1172198 1459741
+            1176664 1464207
+            1203493 1464207
+            1222370 1445330
+          )
+        )
+      )
+      (net VSYS
+        (wire
+          (path BottomLayer 6000
+            974860 587060
+            955983 587060
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            955983 587060
+            849683 480760
+            807540 480760
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            965020 1187370
+            983897 1187370
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            965020 1167690
+            983897 1167690
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            983897 1167690
+            983897 1187370
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            335090 537840
+            335090 518160
+          )
+        )
+      )
+      (net 3V3
+        (wire
+          (path BottomLayer 6000
+            594140 882330
+            577233 882330
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            484700 882330
+            507517 882330
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            507517 882330
+            507517 893738
+            521408 907629
+            558274 907629
+            577233 888670
+            577233 882330
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            169740 1394140
+            146923 1394140
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            135617 1397174
+            143889 1397174
+            146923 1394140
+          )
+        )
+        (via via0 135617 1397174
+        )
+        (wire
+          (path TopLayer 6000
+            69340 1418750
+            114041 1418750
+            135617 1397174
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            298870 1394140
+            281963 1394140
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            169740 1394140
+            192557 1394140
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            192557 1394140
+            192557 1405549
+            206257 1419249
+            256854 1419249
+            281963 1394140
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1496510 1220120
+            1450440 1266190
+            1388250 1266190
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1319350 1276030
+            1319350 1256163
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1388250 1266190
+            1377874 1266190
+            1367847 1256163
+            1319350 1256163
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1262940 1079180
+            1262940 1061483
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1381050 1079180
+            1381050 1061483
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1381050 1061483
+            1262940 1061483
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1046400 1079180
+            1028203 1079180
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            770810 1059500
+            770810 1077197
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            770810 1077197
+            1026220 1077197
+            1028203 1079180
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1361360 783910
+            1361360 766213
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1459790 783910
+            1459790 766213
+          )
+        )
+        (wire
+          (path BottomLayer 6000
+            1459790 766213
+            1361360 766213
+          )
+        )
+      )
+    )
+  )
+)

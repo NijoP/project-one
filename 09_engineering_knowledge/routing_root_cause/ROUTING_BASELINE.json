@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-11-09T00:31:43Z",
+  "project": "WATCH",
+  "engine_version": "DESK V1 / Freerouting v2.1.0 unconstrained",
+  "execution_metrics": {
+    "total_wall_clock_time_sec": 2740.0,
+    "freerouting_wall_clock_sec": 2680.0,
+    "cpu_throttling_status": "HEAVY_THROTTLING_ALL_CORES_100PCT",
+    "threads_allocated": 16,
+    "memory_peak_mb": 4200,
+    "stagnation_timeout_hit": true
+  },
+  "pcb_state": {
+    "components": 89,
+    "pads": 366,
+    "nets": 59,
+    "tracks": 601,
+    "vias": 44,
+    "anchor_drift_mil": {
+      "J1": 0.000,
+      "J2": 0.000,
+      "J5": 0.000,
+      "J6": 0.000,
+      "U5": 0.000
+    }
+  },
+  "drc_metrics": {
+    "total_violations": 442,
+    "clearance_errors": 126,
+    "clearance_breakdown": {
+      "Track to Track": 7,
+      "SMD Pad to Track": 69,
+      "Track to Via": 24,
+      "SMD Pad to Via": 23,
+      "Board Outline to Track": 3
+    },
+    "connection_errors": 316,
+    "gnd_disconnected_pads": 87
+  },
+  "erc_metrics": {
+    "total_erc_warnings": 46,
+    "critical_erc_errors": 0
+  },
+  "failures": [
+    "BN-001: Freerouting multithreading pinning all 16 cores causing heavy fan throttling",
+    "BN-002: S-expression AST serializer splitting coordinates across lines causing java.lang.NullPointerException",
+    "BN-003: Specctra syntax error using keyword 'clearance' instead of 'clear'",
+    "BN-004: Swing GUI dialog freeze in headless execution",
+    "BN-005: 35 mil / 25 mil trace width forced into 9.8 mil QFN pad spacing causing maze search collapse",
+    "BN-006: 601 tracks tagged (type protect) acting as immovable barriers",
+    "BN-007: Copper pour polygons never rebuilt; pcb_PrimitivePoured was 0, isolating 87 GND pads"
+  ]
+}
