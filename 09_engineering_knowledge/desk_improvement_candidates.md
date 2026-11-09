@@ -34,4 +34,8 @@ Based on the empirical failures and performance measurements recorded during Pro
    - *Observation:* Bridge server returns HTTP 500 when EasyEDA JavaScript throws an exception. `desk/bridge.py` caught this as a generic network failure and obscured the actual error.
    - *Improvement:* Read and decode the HTTP 500 response payload (`e.read().decode()`) to extract and surface the underlying JavaScript error message.
 
+9. **Live Mission Control Telemetry & Process Discovery (`BN-009`, `INC-016`):**
+   - *Observation:* Mission Control dashboard previously loaded static state from disk on startup and never reconciled live OS processes, active routing passes, or real-time project deliverables, causing progress to appear frozen at 15.0% and stage status to remain static PENDING.
+   - *Improvement:* Added native Windows API process discovery (`Toolhelp32Snapshot`, `NtQueryInformationProcess`, `GetProcessTimes`) in `ExecutionProjection`, background 1-second telemetry broadcast loop in `DeskServer`, dynamic artifact and LEDGER milestone reconciliation, and loopback `/api/events` telemetry ingestion.
+
 *(For full architectural and disassembly details, see [routing_bottleneck_and_optimization_report.md](routing_bottleneck_and_optimization_report.md))*

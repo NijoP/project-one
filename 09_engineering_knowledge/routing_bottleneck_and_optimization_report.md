@@ -195,3 +195,32 @@ except urllib.error.HTTPError as e:
 | **BN-006** | 0.25 mil Grid Search Explosion | A* timeout on cross-board traces | 16x search node multiplication | Lock routing grid to 1.25 mil for boards $>30\text{ mm}$ |
 | **BN-007** | Pass Termination Loop (Pass 999) | Autorouter runs past target budget | `stop_pass_no` defaults to 999 in Java core | Implement watchdog convergence controller |
 | **BN-008** | IPC Bridge Error Masking | Obscured JavaScript runtime errors | HTTP 500 treated as network failure | Parse JSON response body on HTTPError |
+
+
+### Optimization 5: Direct In-Memory Specctra SES Stream Extraction
+*Workaround for the Freerouting v2.1.0 CLI output-drop bug:*
+In Freerouting `InitializeCLI` lines 261-268:
+```java
+// Freerouting bytecode:
+if (job.state != RoutingJobState.COMPLETED) {
+    return; // Skips Files.write(output)!
+}
+```
+If a job is stopped, timed out, or interrupted without reaching 100% completion, `job.state` is `TERMINATED`, and Freerouting silently exits without saving the generated tracks to `desk_route.ses`.
+However, Freerouting generates the valid Specctra SES file in memory after every pass update inside `RoutingJob.output.dataBytes`.
+**Implementation in DESK:**
+When running Freerouting as an autonomous daemon, DESK should extract the live SES stream directly from the JVM heap (`GC.heap_dump`) using a lightweight byte scanner:
+```python
+# Scan JVM heap dump for Specctra session header
+with open(hprof_path, "rb") as f:
+    data = f.read()
+idx = data.find(b'(session ')
+# Extract balanced parenthetical block containing (routes ... (network ...))
+# Save to desk_route.ses and import immediately into EasyEDA Pro canvas
+```
+This guarantees that 100% of successfully routed nets are preserved, even if the autorouter does not reach zero unrouted nets within the pass budget.
+
+### Optimization 6: EasyEDA PCB API Namespace Alignment
+*Avoid querying non-existent namespaces in EasyEDA Pro PCB canvas:*
+- In PCB canvas documents, placed footprints/components MUST be queried using `eda.pcb_PrimitiveComponent.getAll()`.
+- Calling `eda.pcb_Device` results in `HTTP 500: Cannot read properties of undefined (reading 'getAll')` because `pcb_Device` is exclusive to schematic or non-existent in the PCB workspace.

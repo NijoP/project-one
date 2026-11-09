@@ -20,6 +20,8 @@ All notable changes to the Voice-Interactive Wearable hardware design, execution
 - **Speaker Connectors:** Repositioned `J3` (`SPK_L`) and `J4` (`SPK_R`) from dispersed opposite corners into an adjacent, symmetrical pair on Layer 2 along the top board edge (`200 mil` pitch).
 - **Physical Switches:** Re-aligned scattered pushbutton placements into an aligned, equidistant linear row of 4 switches (`SW1`–`SW4`) along the top edge ($Y = 1633.9\text{ mil}$).
 - **Button Architecture:** Resolved the 5-function vs 4-switch enclosure conflict by multiplexing `User 2` and `Bootloader Mode` onto Switch 4 (`GPIO0`).
+- **Mission Control Cockpit:** Fixed live telemetry streaming and active process detection. Implemented background event loop, Windows API process scanning, and live progress reporting on port 49630.
+- **Autorouting Bottleneck Resolutions:** Patched Freerouting CLI pass budget overrides (`BN-007`), implemented in-memory SES heap extraction (`BN-008`), and corrected EasyEDA PCB API namespace (`BN-009`).
 
 ### Preserved (Locked)
 - Preserved exact coordinates and rotations for USB-C (`J1`), Battery Wirepads (`J2`), microSD Socket (`J5`), Display Header (`J6`), and ESP32-S3 MCU (`U5`) with 0.0 mil drift.

@@ -127,3 +127,63 @@
 - **Major Operations Threshold (15 Minutes / 900s):**
   - Freerouting execution exceeded 15 minutes in initial runs due to `BN-004` (headless dialog hang) and `BN-005` (geometric pin trap).
   - Both root causes are now identified, documented, and resolved.
+
+
+---
+
+### Bottleneck BN-007: Freerouting CLI 999-Pass Hardcode Loop
+1. **Task Name:** `T-015`: Autonomous Router Pass Budget Control (`-mp`)
+2. **Expected Duration (Baseline):** `~60s` for 15 passes (3.6s / pass).
+3. **Actual Duration:** `>1200s` (Process ran beyond 290+ passes).
+4. **Excess Time Consumed:** `+1140s`
+5. **What Happened During Execution:**
+   - In `tools/route.py`, `--passes 15` passed `-mp 15` to Java.
+   - However, Freerouting v2.1.0 continued running passes indefinitely (Pass #100, #200, #291...).
+6. **Root Cause:**
+   - Bytecode disassembly of `app.freerouting.settings.RouterSettings` and `BatchAutorouter` revealed:
+     - `RouterSettings.stop_pass_no` is hardcoded to `999` in the constructor (`102: sipush 999; 105: putfield stop_pass_no:I`).
+     - CLI parser `-mp` only sets `maxPasses` in `RouterSettings`.
+     - But `BatchAutorouter.runBatchLoop()` checks `settings.get_stop_pass_no()`, NOT `maxPasses`!
+     - In CLI mode, `stop_pass_no` is never updated from `maxPasses`, causing the batch router to iterate up to 999 passes unless 100% completion is reached.
+7. **Suggested Optimization:**
+   - Direct heap extraction or background monitor script that captures `RoutingJob.output.dataBytes` as Specctra SES snapshots upon target pass completion.
+8. **Status:** **DOCUMENTED & WORKAROUND IMPLEMENTED.**
+
+---
+
+### Bottleneck BN-008: Freerouting Silent SES Drop on Non-100% Exit
+1. **Task Name:** `T-015`: Specctra SES File Persistence
+2. **Expected Duration (Baseline):** `~2s` file write upon timeout or stop.
+3. **Actual Duration:** Infinite wait (File never written to disk).
+4. **Excess Time Consumed:** `+600s`
+5. **What Happened During Execution:**
+   - Even when Freerouting completed 200+ passes or when job timeout expired, `desk_route.ses` was never generated on disk.
+6. **Root Cause:**
+   - Disassembly of `app.freerouting.Freerouting.InitializeCLI()` revealed lines 261-268:
+     ```
+     261: aload_2
+     262: getfield app/freerouting/core/RoutingJob.state
+     265: getstatic app/freerouting/core/RoutingJobState.COMPLETED
+     268: if_acmpne 324  // SKIPS FILE WRITE IF STATE != COMPLETED!
+     271: // java.nio.file.Files.write(design_output_filename, ...)
+     ```
+   - When a routing job times out or is interrupted, `job.state` is set to `TERMINATED` (not `COMPLETED`).
+   - Consequently, line 268 skips `Files.write`, and the process terminates without saving any routed copper to disk, throwing away all completed tracks!
+7. **Suggested Optimization:**
+   - Extract `RoutingJob.output.dataBytes` directly from the JVM heap (`GC.heap_dump`) via Python, or patch `freerouting.jar` to write output unconditionally on `TERMINATED`.
+8. **Status:** **RESOLVED VIA HEAP EXTRACTION PIPELINE.**
+
+---
+
+### Bottleneck BN-009: EasyEDA Pro API Namespace Discrepancy (`pcb_Device` vs `pcb_PrimitiveComponent`)
+1. **Task Name:** `T-015`: Post-Routing Verification & Component Audit
+2. **Expected Duration (Baseline):** `~1s`
+3. **Actual Duration:** `~30s` (HTTP 500 error debugging).
+4. **Excess Time Consumed:** `+29s`
+5. **What Happened During Execution:**
+   - Queries to `eda.pcb_Device.getAll()` failed with `HTTP 500: Cannot read properties of undefined (reading 'getAll')`.
+6. **Root Cause:**
+   - In EasyEDA Pro JavaScript API, placed board components are registered under `eda.pcb_PrimitiveComponent`, while `eda.pcb_Device` is exclusive to schematic or non-existent in PCB workspace.
+7. **Suggested Optimization:**
+   - Standardize all component queries on `eda.pcb_PrimitiveComponent.getAll()`.
+8. **Status:** **FIXED.**

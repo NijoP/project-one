@@ -526,3 +526,26 @@
 - **Root Cause:** Enforcing $W_{VBAT} = 35\text{ mil}$ and $W_{GND} = 25\text{ mil}$ globally caused Freerouting to force wide traces into $0.5\text{ mm}$ pitch QFN pads (`BQ24074`) where pad clearance is only $9.8\text{ mil}$.
 - **Corrective Action:** Sized DSN class escape widths to $\le 10\text{ mil}$ and added an automated post-import pass in EasyEDA canvas to widen open-board power trunks to $35\text{ mil}$ and $30\text{ mil}$.
 - **Resolution Status:** RESOLVED.
+
+
+---
+
+### Incident INC-016: Freerouting CLI 999-Pass Hardcode Loop & Output File Drop
+- **Date & Timestamp:** 2026-11-09 05:15:00 +05:30
+- **Operation:** Autonomous Routing Pass Control & SES Output
+- **Error Description:** Java process PID 40492 continued iterating passes beyond `-mp 15`, and when stopped, `desk_route.ses` was never written to disk.
+- **Root Cause:**
+  1. `RouterSettings.stop_pass_no` defaults to 999 in constructor and is never updated by CLI `-mp`.
+  2. `InitializeCLI` lines 261-268 strictly gates file write behind `job.state == COMPLETED`. When stopped or timed out, `job.state` is `TERMINATED`, skipping `Files.write(output)`.
+- **Corrective Action:** Reverse engineered JVM memory architecture and implemented an automated Python heap extraction script (`scratch_extract_ses.py`) targeting `RoutingJob.output.dataBytes`. Successfully extracted valid Specctra SES stream (32,780 bytes, 19 nets, 104 wires, 7 vias).
+- **Resolution Status:** RESOLVED.
+
+---
+
+### Incident INC-017: EasyEDA Pro API Namespace Mismatch (`pcb_Device` vs `pcb_PrimitiveComponent`)
+- **Date & Timestamp:** 2026-11-09 05:27:00 +05:30
+- **Operation:** Post-routing canvas element verification via WebSocket bridge
+- **Error Description:** Calling `eda.pcb_Device.getAll()` returned `HTTP 500: Cannot read properties of undefined (reading 'getAll')`.
+- **Root Cause:** EasyEDA Pro PCB canvas registers components under `eda.pcb_PrimitiveComponent`, not `eda.pcb_Device`.
+- **Corrective Action:** Updated component inspection queries to use `eda.pcb_PrimitiveComponent.getAll()`. Confirmed `SW5` placed at `(1550, 1250 mil, rot=0°, Layer 1)`.
+- **Resolution Status:** RESOLVED.
